@@ -70,7 +70,7 @@ const App: React.FC = () => {
   const getCategoryLabel = (cat: string) => {
     switch(cat) {
         case 'trucker': return 'Trucker Cap';
-        case 'full': return 'Full Cap';
+        case 'full': return 'Snapback';
         case 'tshirt': return 'T-Shirt';
         default: return cat;
     }
