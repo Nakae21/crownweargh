@@ -5,21 +5,21 @@ import ProductCard from './components/ProductCard';
 import AIStylist from './components/AIStylist';
 import { PRODUCTS } from './constants';
 import { CartItem, Product } from './types';
-import { X, Trash2, Instagram, Twitter, Facebook, ArrowUp, Send, ShoppingBag, MapPin, Phone, Mail, Crown, Minus, Plus } from 'lucide-react';
+import { X, Trash2, Instagram, Twitter, Facebook, ArrowUp, Send, ShoppingBag, MapPin, Phone, Mail, Crown, Minus, Plus, Upload, Image as ImageIcon } from 'lucide-react';
 
 const OWNER_WHATSAPP = "233550008170";
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'all' | 'trucker' | 'full' | 'tshirt'>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'trucker' | 'full'>('all');
   
   // Checkout Form State
   const [checkoutForm, setCheckoutForm] = useState({
     name: '',
     phone: '',
     address: '',
-    customText: '' // Global custom text note, though individual items track "hasCustomText"
+    customText: '' 
   });
 
   const [contactForm, setContactForm] = useState({
@@ -28,50 +28,72 @@ const App: React.FC = () => {
     message: ''
   });
 
-  const addToCart = (product: Product, hasCustomText: boolean) => {
+  const addToCart = (product: Product, hasCustomText: boolean, hasCustomDesign: boolean) => {
     setCart(prev => {
       // Find item with same ID AND same customization status
-      const existing = prev.find(item => item.id === product.id && item.hasCustomText === hasCustomText);
+      const existing = prev.find(item => 
+        item.id === product.id && 
+        item.hasCustomText === hasCustomText && 
+        item.hasCustomDesign === hasCustomDesign
+      );
       
       if (existing) {
         return prev.map(item => 
-          (item.id === product.id && item.hasCustomText === hasCustomText)
+          (item.id === product.id && item.hasCustomText === hasCustomText && item.hasCustomDesign === hasCustomDesign)
             ? { ...item, quantity: item.quantity + 1 } 
             : item
         );
       }
-      return [...prev, { ...product, quantity: 1, hasCustomText }];
+      return [...prev, { ...product, quantity: 1, hasCustomText, hasCustomDesign }];
     });
     setIsCartOpen(true);
   };
 
-  const removeFromCart = (id: number, hasCustomText?: boolean) => {
-    setCart(prev => prev.filter(item => !(item.id === id && item.hasCustomText === hasCustomText)));
+  const removeFromCart = (id: number, hasCustomText?: boolean, hasCustomDesign?: boolean) => {
+    setCart(prev => prev.filter(item => !(item.id === id && item.hasCustomText === hasCustomText && item.hasCustomDesign === hasCustomDesign)));
   };
 
-  const updateQuantity = (id: number, hasCustomText: boolean | undefined, newQuantity: number) => {
+  const updateQuantity = (id: number, hasCustomText: boolean | undefined, hasCustomDesign: boolean | undefined, newQuantity: number) => {
     if (newQuantity < 1) return;
     setCart(prev => prev.map(item => 
-      (item.id === id && item.hasCustomText === hasCustomText)
+      (item.id === id && item.hasCustomText === hasCustomText && item.hasCustomDesign === hasCustomDesign)
         ? { ...item, quantity: newQuantity }
         : item
     ));
+  };
+
+  // Handle file selection for custom designs in cart
+  const handleDesignUpload = (id: number, hasCustomText: boolean | undefined, hasCustomDesign: boolean | undefined, e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setCart(prev => prev.map(item => 
+        (item.id === id && item.hasCustomText === hasCustomText && item.hasCustomDesign === hasCustomDesign)
+          ? { ...item, customDesignImage: imageUrl }
+          : item
+      ));
+    }
   };
 
   const filteredProducts = activeCategory === 'all' 
     ? PRODUCTS 
     : PRODUCTS.filter(p => p.category === activeCategory);
 
+  const calculateItemPrice = (item: CartItem) => {
+    let price = item.price;
+    if (item.hasCustomText) price += 10;
+    if (item.hasCustomDesign) price += 20;
+    return price;
+  };
+
   const cartTotal = cart.reduce((acc, item) => {
-    const itemPrice = item.hasCustomText ? item.price + 10 : item.price;
-    return acc + (itemPrice * item.quantity);
+    return acc + (calculateItemPrice(item) * item.quantity);
   }, 0);
 
   const getCategoryLabel = (cat: string) => {
     switch(cat) {
         case 'trucker': return 'Trucker Cap';
-        case 'full': return 'Snapback';
-        case 'tshirt': return 'T-Shirt';
+        case 'full': return 'Snapback Cap';
         default: return cat;
     }
   };
@@ -88,15 +110,29 @@ const App: React.FC = () => {
     message += `📍 *Address:* ${checkoutForm.address}\n\n`;
     message += `🛒 *Order Summary:*\n`;
 
+    let hasCustomDesignItem = false;
+
     cart.forEach(item => {
-      const itemPrice = item.hasCustomText ? item.price + 10 : item.price;
+      const itemPrice = calculateItemPrice(item);
       const subtotal = itemPrice * item.quantity;
-      const customNote = item.hasCustomText ? " [CUSTOM TEXT]" : "";
-      message += `- ${item.name} (${getCategoryLabel(item.category)})${customNote} x ${item.quantity} = GHS ${subtotal.toFixed(2)}\n`;
+      
+      let extras = [];
+      if (item.hasCustomText) extras.push("Text");
+      if (item.hasCustomDesign) {
+        extras.push("Design");
+        hasCustomDesignItem = true;
+      }
+      const extrasStr = extras.length > 0 ? ` [${extras.join('+')}]` : "";
+
+      message += `- ${item.name} (${getCategoryLabel(item.category)})${extrasStr} x ${item.quantity} = GHS ${subtotal.toFixed(2)}\n`;
     });
 
     if (checkoutForm.customText) {
-       message += `\n📝 *Custom Text Details:* ${checkoutForm.customText}\n`;
+       message += `\n📝 *Custom Text Note:* ${checkoutForm.customText}\n`;
+    }
+
+    if (hasCustomDesignItem) {
+      message += `\n📸 *Custom Design:* I have attached a custom design to this order. I will send the image in this chat immediately.\n`;
     }
 
     message += `\n💰 *Grand Total:* GHS ${cartTotal.toFixed(2)}\n\n`;
@@ -145,7 +181,6 @@ const App: React.FC = () => {
                 { id: 'all', label: 'All' },
                 { id: 'trucker', label: 'Trucker (Net)' },
                 { id: 'full', label: 'Snapback Cap' },
-                { id: 'tshirt', label: 'T-Shirts' }
               ].map((cat) => (
                 <button
                   key={cat.id}
@@ -175,7 +210,7 @@ const App: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="order-2 md:order-1 relative group">
                 <div className="absolute inset-0 bg-brand-accent/20 rounded-lg transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                 <img 
+                <img 
                   src="/images/about_story.jpg" 
                   onError={(e) => { e.currentTarget.src = "https://picsum.photos/800/600?grayscale" }}
                   alt="Workshop" 
@@ -188,7 +223,7 @@ const App: React.FC = () => {
                   CrownWear isn't just a brand; it's a statement. Born from the hustle and designed for those who wear their ambition. We believe that what you wear is the prologue to your story.
                 </p>
                 <p className="text-brand-sub text-lg mb-8 leading-relaxed">
-                  Our caps come in two distinct styles: the classic Trucker with breathable mesh for those street vibes, and the Premium Full Cap for a solid, structured look. All customizable.
+                  Our caps come in two distinct styles: the classic Trucker with breathable mesh for those street vibes, and the Premium Snapback Cap for a solid, structured look. All customizable.
                 </p>
                 <div className="grid grid-cols-3 gap-4 border-t border-brand-line pt-8">
                   <div className="text-center">
@@ -373,7 +408,6 @@ const App: React.FC = () => {
                 <li><a href="#" className="hover:text-brand-accent transition-colors">New Arrivals</a></li>
                 <li><a href="#" className="hover:text-brand-accent transition-colors">Best Sellers</a></li>
                 <li><a href="#" className="hover:text-brand-accent transition-colors">Caps</a></li>
-                <li><a href="#" className="hover:text-brand-accent transition-colors">T-Shirts</a></li>
               </ul>
             </div>
 
@@ -427,53 +461,104 @@ const App: React.FC = () => {
               ) : (
                 <div className="space-y-6">
                     {cart.map((item, idx) => {
-                         const itemPrice = item.hasCustomText ? item.price + 10 : item.price;
+                         const itemPrice = calculateItemPrice(item);
                          return (
-                            <div key={`${item.id}-${item.hasCustomText}`} className="flex gap-4 p-3 bg-brand-card rounded-lg border border-brand-line">
-                                <img 
-                                    src={item.image} 
-                                    onError={(e) => { e.currentTarget.src = "https://picsum.photos/200/200?grayscale" }}
-                                    alt={item.name} 
-                                    className="w-20 h-20 object-cover rounded bg-white" 
-                                />
-                                <div className="flex-1">
-                                <h3 className="font-bold text-brand-ink text-sm">{item.name}</h3>
-                                <p className="text-brand-sub text-xs mb-1 capitalize">{getCategoryLabel(item.category)}</p>
-                                {item.hasCustomText && (
-                                    <span className="inline-block bg-brand-accent/20 text-brand-black text-[10px] px-1.5 py-0.5 rounded mb-2">
-                                        + Custom Text
-                                    </span>
-                                )}
-                                <div className="flex items-center justify-between mt-2">
-                                    <div className="flex items-center border border-brand-line rounded bg-white">
-                                        <button 
-                                            onClick={() => updateQuantity(item.id, item.hasCustomText, item.quantity - 1)}
-                                            className="px-2 py-1 text-brand-sub hover:bg-gray-100 disabled:opacity-30 transition-colors"
-                                            disabled={item.quantity <= 1}
-                                        >
-                                            <Minus className="w-3 h-3" />
-                                        </button>
-                                        <span className="px-2 text-xs font-bold text-brand-ink border-x border-brand-line min-w-[20px] text-center">
-                                            {item.quantity}
-                                        </span>
-                                        <button 
-                                            onClick={() => updateQuantity(item.id, item.hasCustomText, item.quantity + 1)}
-                                            className="px-2 py-1 text-brand-sub hover:bg-gray-100 transition-colors"
-                                        >
-                                            <Plus className="w-3 h-3" />
-                                        </button>
+                            <div key={`${item.id}-${item.hasCustomText}-${item.hasCustomDesign}`} className="p-3 bg-brand-card rounded-lg border border-brand-line">
+                              <div className="flex gap-4 mb-3">
+                                  <img 
+                                      src={item.image} 
+                                      onError={(e) => { e.currentTarget.src = "https://picsum.photos/200/200?grayscale" }}
+                                      alt={item.name} 
+                                      className="w-20 h-20 object-cover rounded bg-white" 
+                                  />
+                                  <div className="flex-1">
+                                    <h3 className="font-bold text-brand-ink text-sm">{item.name}</h3>
+                                    <p className="text-brand-sub text-xs mb-1 capitalize">{getCategoryLabel(item.category)}</p>
+                                    
+                                    <div className="flex flex-wrap gap-1 mb-2">
+                                      {item.hasCustomText && (
+                                          <span className="inline-block bg-brand-accent/20 text-brand-black text-[10px] px-1.5 py-0.5 rounded border border-brand-accent/30">
+                                              + Text
+                                          </span>
+                                      )}
+                                      {item.hasCustomDesign && (
+                                          <span className="inline-block bg-brand-ink/90 text-white text-[10px] px-1.5 py-0.5 rounded border border-brand-ink">
+                                              + Design
+                                          </span>
+                                      )}
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-brand-accent font-bold text-sm">GHS {(itemPrice * item.quantity).toFixed(0)}</span>
-                                        <button 
-                                        onClick={() => removeFromCart(item.id, item.hasCustomText)}
-                                        className="text-gray-400 hover:text-red-500 transition-colors"
-                                        >
-                                        <Trash2 className="w-4 h-4" />
-                                        </button>
+
+                                    <div className="flex items-center justify-between mt-2">
+                                        <div className="flex items-center border border-brand-line rounded bg-white">
+                                            <button 
+                                                onClick={() => updateQuantity(item.id, item.hasCustomText, item.hasCustomDesign, item.quantity - 1)}
+                                                className="px-2 py-1 text-brand-sub hover:bg-gray-100 disabled:opacity-30 transition-colors"
+                                                disabled={item.quantity <= 1}
+                                            >
+                                                <Minus className="w-3 h-3" />
+                                            </button>
+                                            <span className="px-2 text-xs font-bold text-brand-ink border-x border-brand-line min-w-[20px] text-center">
+                                                {item.quantity}
+                                            </span>
+                                            <button 
+                                                onClick={() => updateQuantity(item.id, item.hasCustomText, item.hasCustomDesign, item.quantity + 1)}
+                                                className="px-2 py-1 text-brand-sub hover:bg-gray-100 transition-colors"
+                                            >
+                                                <Plus className="w-3 h-3" />
+                                            </button>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-brand-accent font-bold text-sm">GHS {(itemPrice * item.quantity).toFixed(0)}</span>
+                                            <button 
+                                            onClick={() => removeFromCart(item.id, item.hasCustomText, item.hasCustomDesign)}
+                                            className="text-gray-400 hover:text-red-500 transition-colors"
+                                            >
+                                            <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </div>
                                     </div>
+                                  </div>
+                              </div>
+                              
+                              {/* Custom Design File Input Area */}
+                              {item.hasCustomDesign && (
+                                <div className="mt-2 p-3 bg-white rounded border border-dashed border-brand-sub/30">
+                                  <label className="block text-xs font-bold text-brand-ink mb-2 flex items-center gap-1">
+                                    <ImageIcon className="w-3 h-3" /> Upload Your Design:
+                                  </label>
+                                  
+                                  {item.customDesignImage ? (
+                                    <div className="relative group">
+                                      <img src={item.customDesignImage} alt="Preview" className="w-full h-24 object-contain rounded bg-gray-50 border border-brand-line" />
+                                      <label className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold rounded">
+                                        Change Image
+                                        <input 
+                                          type="file" 
+                                          accept="image/*" 
+                                          className="hidden" 
+                                          onChange={(e) => handleDesignUpload(item.id, item.hasCustomText, item.hasCustomDesign, e)}
+                                        />
+                                      </label>
+                                    </div>
+                                  ) : (
+                                    <label className="flex flex-col items-center justify-center w-full h-20 border-2 border-brand-line border-dashed rounded cursor-pointer hover:bg-brand-card hover:border-brand-accent transition-colors">
+                                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <Upload className="w-5 h-5 text-brand-sub mb-1" />
+                                            <p className="text-[10px] text-brand-sub"><span className="font-semibold">Click to upload</span></p>
+                                        </div>
+                                        <input 
+                                          type="file" 
+                                          accept="image/*" 
+                                          className="hidden" 
+                                          onChange={(e) => handleDesignUpload(item.id, item.hasCustomText, item.hasCustomDesign, e)}
+                                        />
+                                    </label>
+                                  )}
+                                  <p className="text-[10px] text-orange-600 mt-1 italic">
+                                    *You will be asked to send this image in the WhatsApp chat.
+                                  </p>
                                 </div>
-                                </div>
+                              )}
                             </div>
                          );
                     })}
@@ -525,6 +610,16 @@ const App: React.FC = () => {
                   <span className="text-brand-ink">TOTAL</span>
                   <span className="text-brand-accent">GHS {cartTotal.toFixed(2)}</span>
                 </div>
+                
+                {cart.some(i => i.hasCustomDesign) && (
+                   <div className="bg-orange-50 border border-orange-200 rounded p-3 mb-4 flex gap-2">
+                      <ImageIcon className="w-4 h-4 text-orange-600 flex-shrink-0 mt-0.5" />
+                      <p className="text-xs text-orange-800">
+                        <span className="font-bold">Important:</span> For custom designs, please attach your image(s) in the WhatsApp chat immediately after sending the order message.
+                      </p>
+                   </div>
+                )}
+
                 <button 
                     onClick={handleWhatsAppOrder}
                     className="w-full bg-green-600 text-white py-4 font-bold tracking-widest hover:bg-green-500 transition-colors uppercase rounded flex items-center justify-center gap-2"
