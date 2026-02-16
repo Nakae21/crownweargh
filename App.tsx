@@ -176,7 +176,7 @@ const App: React.FC = () => {
               <div className="order-2 md:order-1 relative group">
                 <div className="absolute inset-0 bg-brand-accent/20 rounded-lg transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
                  <img 
-                  src="images/about_story.jpg" 
+                  src="/images/about_story.jpg" 
                   onError={(e) => { e.currentTarget.src = "https://picsum.photos/800/600?grayscale" }}
                   alt="Workshop" 
                   className="rounded-lg shadow-2xl filter contrast-125 relative z-10 border border-brand-line"
@@ -276,7 +276,7 @@ const App: React.FC = () => {
                  <div className="relative bg-white p-1 rounded-lg">
                      {/* QR Code */}
                      <img 
-                        src="images/whatsapp_qr.jpg" 
+                        src="/images/whatsapp_qr.jpg" 
                         alt="Scan to Join"
                         className="w-48 h-48 object-contain mix-blend-multiply"
                         onError={(e) => { e.currentTarget.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/233550008170" }}
