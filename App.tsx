@@ -144,7 +144,7 @@ const App: React.FC = () => {
               {[
                 { id: 'all', label: 'All' },
                 { id: 'trucker', label: 'Trucker (Net)' },
-                { id: 'full', label: 'Full Cap' },
+                { id: 'full', label: 'Snapback' },
                 { id: 'tshirt', label: 'T-Shirts' }
               ].map((cat) => (
                 <button
