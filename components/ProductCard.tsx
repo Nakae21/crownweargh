@@ -12,7 +12,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
   const [hasCustomDesign, setHasCustomDesign] = useState(false);
   
   // Pricing: Custom Text (+10), Custom Design (+20)
-  const displayPrice = product.price + (hasCustomText ? 10 : 0) + (hasCustomDesign ? 20 : 0);
+  const displayPrice = product.price + (hasCustomText ? 10 : 0) + (hasCustomDesign ? 10 : 0);
 
   const getCategoryDisplay = (cat: string) => {
       switch(cat) {
