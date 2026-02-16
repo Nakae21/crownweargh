@@ -147,10 +147,10 @@ export const PRODUCTS: Product[] = [
     description: "Yellow front with black mesh. Warning tape vibes."
   },
 
-  // --- FULL CAPS (NO NET) ---
+  // --- FULL CAPS/snapback (NO NET) ---
   {
     id: 50,
-    name: "Premium Full - Black",
+    name: "Premium Full - Black/Red",
     price: 50.00,
     category: 'full',
     image: "/images/cap_full_fabric_black_red.jpeg",
@@ -158,7 +158,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 51,
-    name: "Premium Full - Navy",
+    name: "Premium Full - White/Black",
     price: 50.00,
     category: 'full',
     image: "/images/cap_full_fabric_navy.jpeg",
@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 53,
-    name: "Premium Full - Olive",
+    name: "Premium Full - White/SeaBlue",
     price: 50.00,
     category: 'full',
     image: "/images/cap_full_fabric_olive_seab.jpeg",
