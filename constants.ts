@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 9,
-    name: "Kakie",
+    name: "Khaki",
     price: 40.00,
     category: 'trucker',
     image: "/images/cap_white_brown.jpg",
