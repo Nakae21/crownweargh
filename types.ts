@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   name: string;
   price: number;
-  category: 'trucker' | 'full' | 'tshirt';
+  category: 'trucker' | 'full';
   image: string;
   description: string;
 }
@@ -17,4 +17,6 @@ export interface ChatMessage {
 export interface CartItem extends Product {
   quantity: number;
   hasCustomText?: boolean;
+  hasCustomDesign?: boolean;
+  customDesignImage?: string; // For local preview only
 }
