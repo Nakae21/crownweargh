@@ -147,151 +147,151 @@ export const PRODUCTS: Product[] = [
     description: "Yellow front with black mesh. Warning tape vibes."
   },
 
-  // --- FULL CAPS/snapback (NO NET) ---
-  {
-    id: 50,
-    name: "Premium Full - Black/Red",
-    price: 50.00,
-    category: 'full',
-    image: "/images/cap_full_fabric_black_red.jpeg",
-    description: "Solid cotton structure with no mesh. Premium full fabric fit."
-  },
-  {
-    id: 51,
-    name: "Premium Full - White/Black",
-    price: 50.00,
-    category: 'full',
-    image: "/images/cap_full_fabric_navy.jpeg",
-    description: "Deep navy blue full fabric cap. Smooth texture, superior quality."
-  },
-  {
-    id: 52,
-    name: "Premium Full - Red Snapback",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_r-r.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 53,
-    name: "Premium Full - White/SeaBlue",
-    price: 50.00,
-    category: 'full',
-    image: "/images/cap_full_fabric_olive_seab.jpeg",
-    description: "Solid olive green fabric. Rugged look, soft feel."
-  },
-  {
-    id: 54,
-    name: "Premium Full - Black/Blue",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_b-b.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-   {
-    id: 55,
-    name: "Premium Full - Black/Blue",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black-blue.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-   {
-    id: 56,
-    name: "Premium Full - Black/Mauve",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black-mauve.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 57,
-    name: "Premium Full - Black/Red",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black-red.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 58,
-    name: "Premium Full - Black/White",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black-white.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 59,
-    name: "Premium Full - Black/Yellow",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black-yellow.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 60,
-    name: "Premium Full - Black",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_black.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 61,
-    name: "Premium Full - Blue/Red",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_blue-red.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 62,
-    name: "Premium Full - Blue/Yellow",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_blue-yellow.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 63,
-    name: "Premium Full - Blue",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_blue.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 64,
-    name: "Premium Full - Green/Black",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_green-black.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 65,
-    name: "Premium Full - Mauve/Yellow",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_mauve-yellow.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 66,
-    name: "Premium Full - Red/Grey",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_red-grey.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
-  {
-    id: 67,
-    name: "Premium Full - White/Black",
-    price: 50.00,
-    category: 'full',
-    image: "/images/Snapback/cap_full_white-black.jpeg",
-    description: "Soft structure full cap in sand beige. Casual and clean without the net."
-  },
+  // --- FULL CAPS / SNAPBACK (NO NET) ---
+{
+  id: 50,
+  name: "Premium Full - Black/Red",
+  price: 50.00,
+  category: 'full',
+  image: "/images/cap_full_fabric_black_red.jpeg",
+  description: "Premium full fabric snapback in black and red. Bold contrast with a clean structured finish."
+},
+{
+  id: 51,
+  name: "Premium Full - White/Black",
+  price: 50.00,
+  category: 'full',
+  image: "/images/cap_full_fabric_navy.jpeg",
+  description: "Premium full fabric snapback in white and black. Crisp two-tone design with a smooth structured fit."
+},
+{
+  id: 52,
+  name: "Premium Full - Red Snapback",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_r-r.jpeg",
+  description: "Premium full fabric snapback in solid red. Clean, bold, and perfectly structured."
+},
+{
+  id: 53,
+  name: "Premium Full - White/SeaBlue",
+  price: 50.00,
+  category: 'full',
+  image: "/images/cap_full_fabric_olive_seab.jpeg",
+  description: "Premium full fabric snapback in white and sea blue. Fresh color blend with a smooth structured finish."
+},
+{
+  id: 54,
+  name: "Premium Full - Black/Blue",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_b-b.jpeg",
+  description: "Premium full fabric snapback in black and blue. Sleek contrast with a clean structured look."
+},
+{
+  id: 55,
+  name: "Premium Full - Black/Blue",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black-blue.jpeg",
+  description: "Premium full fabric snapback in black and blue. Modern two-tone design with a firm structured fit."
+},
+{
+  id: 56,
+  name: "Premium Full - Black/Mauve",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black-mauve.jpeg",
+  description: "Premium full fabric snapback in black and mauve. Unique color combination with a clean structured finish."
+},
+{
+  id: 57,
+  name: "Premium Full - Black/Red",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black-red.jpeg",
+  description: "Premium full fabric snapback in black and red. Strong contrast with a bold structured style."
+},
+{
+  id: 58,
+  name: "Premium Full - Black/White",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black-white.jpeg",
+  description: "Premium full fabric snapback in black and white. Classic two-tone design with a sharp structured look."
+},
+{
+  id: 59,
+  name: "Premium Full - Black/Yellow",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black-yellow.jpeg",
+  description: "Premium full fabric snapback in black and yellow. Vibrant contrast with a clean structured finish."
+},
+{
+  id: 60,
+  name: "Premium Full - Black",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_black.jpeg",
+  description: "Premium full fabric snapback in solid black. Minimal, sleek, and perfectly structured."
+},
+{
+  id: 61,
+  name: "Premium Full - Blue/Red",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_blue-red.jpeg",
+  description: "Premium full fabric snapback in blue and red. Bold color mix with a smooth structured fit."
+},
+{
+  id: 62,
+  name: "Premium Full - Blue/Yellow",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_blue-yellow.jpeg",
+  description: "Premium full fabric snapback in blue and yellow. Bright contrast with a sharp structured finish."
+},
+{
+  id: 63,
+  name: "Premium Full - Blue",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_blue.jpeg",
+  description: "Premium full fabric snapback in solid blue. Clean, bold, and smoothly structured."
+},
+{
+  id: 64,
+  name: "Premium Full - Green/Black",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_green-black.jpeg",
+  description: "Premium full fabric snapback in green and black. Strong two-tone look with a clean structured fit."
+},
+{
+  id: 65,
+  name: "Premium Full - Mauve/Yellow",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_mauve-yellow.jpeg",
+  description: "Premium full fabric snapback in mauve and yellow. Unique vibrant blend with a firm structured finish."
+},
+{
+  id: 66,
+  name: "Premium Full - Red/Grey",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_red-grey.jpeg",
+  description: "Premium full fabric snapback in red and grey. Balanced contrast with a clean structured design."
+},
+{
+  id: 67,
+  name: "Premium Full - White/Black",
+  price: 50.00,
+  category: 'full',
+  image: "/images/Snapback/cap_full_white-black.jpeg",
+  description: "Premium full fabric snapback in white and black. Crisp classic combination with a sharp structured finish."
+},
 
   
   // --- GRAPHIC TEES ---
