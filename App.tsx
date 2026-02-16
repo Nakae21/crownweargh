@@ -82,7 +82,7 @@ const App: React.FC = () => {
   const calculateItemPrice = (item: CartItem) => {
     let price = item.price;
     if (item.hasCustomText) price += 10;
-    if (item.hasCustomDesign) price += 20;
+    if (item.hasCustomDesign) price += 10;
     return price;
   };
 
