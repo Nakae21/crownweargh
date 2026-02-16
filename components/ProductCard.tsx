@@ -107,7 +107,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
                     onChange={(e) => setHasCustomDesign(e.target.checked)}
                 />
                 <span className={`text-sm font-medium transition-colors ${hasCustomDesign ? 'text-brand-ink font-bold' : 'text-brand-sub group-hover/check:text-brand-ink'}`}>
-                    Add Custom Design (+GHS 20)
+                    Add Custom Design (+GHS 10)
                 </span>
             </label>
         </div>
