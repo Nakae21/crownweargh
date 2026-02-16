@@ -15,7 +15,7 @@ export const PRODUCTS: Product[] = [
     name: "Classic Black",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_full_black.jpg",
+    image: "/images/cap_full_black.jpg",
     description: "The essential all-black trucker cap with mesh back. Stealth, sleek, and versatile."
   },
   {
@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Black",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_black.jpg",
+    image: "/images/cap_white_black.jpg",
     description: "High contrast monochrome. White foam front with black mesh back."
   },
   {
@@ -31,7 +31,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Royal Blue",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_blue.jpg",
+    image: "/images/cap_white_blue.jpg",
     description: "Crisp white front with a vibrant royal blue mesh and bill."
   },
   {
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Red",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_red.jpg",
+    image: "/images/cap_white_red.jpg",
     description: "Bold red mesh and bill paired with a clean white front."
   },
   {
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Green",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_green.jpg",
+    image: "/images/cap_white_green.jpg",
     description: "Fresh kelly green mesh back. Perfect for a nature-inspired look."
   },
   {
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Yellow",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_yellow.jpg",
+    image: "/images/cap_white_yellow.jpg",
     description: "Sunny and energetic. White front with bright yellow details."
   },
   {
@@ -63,7 +63,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Orange",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_orange.jpg",
+    image: "/images/cap_white_orange.jpg",
     description: "Citrus orange mesh back for a pop of color."
   },
   {
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Grey",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_grey.jpg",
+    image: "/images/cap_white_grey.jpg",
     description: "Neutral grey tones. Understated and professional."
   },
   {
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Brown",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_brown.jpg",
+    image: "/images/cap_white_brown.jpg",
     description: "Earth tone brown mesh. Rugged and grounded."
   },
   {
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Light Blue",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_lightblue.jpg",
+    image: "/images/cap_white_lightblue.jpg",
     description: "Sky blue mesh. Light, airy, and chill."
   },
   {
@@ -95,7 +95,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Maroon",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_maroon.jpg",
+    image: "/images/cap_white_maroon.jpg",
     description: "Deep maroon mesh. Sophisticated streetwear."
   },
   {
@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Olive",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_white_olive.jpg",
+    image: "/images/cap_white_olive.jpg",
     description: "Muted olive green. A tactical aesthetic."
   },
   {
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     name: "White & Camo",
     price: 55.00,
     category: 'trucker',
-    image: "images/cap_white_camo.jpg",
+    image: "/images/cap_white_camo.jpg",
     description: "Woodland camouflage mesh back. Stand out by blending in."
   },
   {
@@ -119,7 +119,7 @@ export const PRODUCTS: Product[] = [
     name: "Full Yellow (Mesh)",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_full_yellow.jpg",
+    image: "/images/cap_full_yellow.jpg",
     description: "All-over bright yellow with mesh back. For those who aren't afraid to be seen."
   },
   {
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     name: "Full Beige (Mesh)",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_full_beige.jpg",
+    image: "/images/cap_full_beige.jpg",
     description: "Sand/Beige tone with mesh back. The perfect neutral base."
   },
   {
@@ -135,7 +135,7 @@ export const PRODUCTS: Product[] = [
     name: "Red & Black",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_red_black.jpg",
+    image: "/images/cap_red_black.jpg",
     description: "Aggressive red front with black mesh. A power combination."
   },
   {
@@ -143,7 +143,7 @@ export const PRODUCTS: Product[] = [
     name: "Yellow & Black",
     price: 50.00,
     category: 'trucker',
-    image: "images/cap_yellow_black.jpg",
+    image: "/images/cap_yellow_black.jpg",
     description: "Yellow front with black mesh. Warning tape vibes."
   },
 
@@ -153,7 +153,7 @@ export const PRODUCTS: Product[] = [
     name: "Premium Full - Black",
     price: 60.00,
     category: 'full',
-    image: "images/cap_full_fabric_black_red.jpeg",
+    image: "/images/cap_full_fabric_black_red.jpeg",
     description: "Solid cotton structure with no mesh. Premium full fabric fit."
   },
   {
@@ -161,7 +161,7 @@ export const PRODUCTS: Product[] = [
     name: "Premium Full - Navy",
     price: 60.00,
     category: 'full',
-    image: "images/cap_full_fabric_navy.jpeg",
+    image: "/images/cap_full_fabric_navy.jpeg",
     description: "Deep navy blue full fabric cap. Smooth texture, superior quality."
   },
   {
@@ -169,7 +169,7 @@ export const PRODUCTS: Product[] = [
     name: "Premium Full - Beige",
     price: 60.00,
     category: 'full',
-    image: "images/cap_full_fabric_beige.jpeg",
+    image: "/images/cap_full_fabric_beige.jpeg",
     description: "Soft structure full cap in sand beige. Casual and clean without the net."
   },
   {
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     name: "Premium Full - Olive",
     price: 60.00,
     category: 'full',
-    image: "images/cap_full_fabric_olive_seab.jpeg",
+    image: "/images/cap_full_fabric_olive_seab.jpeg",
     description: "Solid olive green fabric. Rugged look, soft feel."
   },
 
@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     name: "Own Your Crown - Black",
     price: 80.00,
     category: 'tshirt',
-    image: "images/tee_own_crown_black.jpg",
+    image: "/images/tee_own_crown_black.jpg",
     description: "Signature 'Own Your Crown' graphic on premium black heavyweight cotton."
   },
   {
@@ -195,7 +195,7 @@ export const PRODUCTS: Product[] = [
     name: "Own Your Crown - White",
     price: 80.00,
     category: 'tshirt',
-    image: "images/tee_own_crown_white.jpg",
+    image: "/images/tee_own_crown_white.jpg",
     description: "Signature 'Own Your Crown' graphic on crisp white cotton."
   },
   {
@@ -203,7 +203,7 @@ export const PRODUCTS: Product[] = [
     name: "Breathe Believe Begin - Black",
     price: 80.00,
     category: 'tshirt',
-    image: "images/tee_breathe_black.jpg",
+    image: "/images/tee_breathe_black.jpg",
     description: "Motivational typography print. 'Breathe Believe Begin' on black."
   },
   {
@@ -211,7 +211,7 @@ export const PRODUCTS: Product[] = [
     name: "Breathe Believe Begin - White",
     price: 80.00,
     category: 'tshirt',
-    image: "images/tee_breathe_white.jpg",
+    image: "/images/tee_breathe_white.jpg",
     description: "Motivational typography print. 'Breathe Believe Begin' on white."
   }
 ];
