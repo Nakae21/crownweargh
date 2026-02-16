@@ -166,10 +166,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 52,
-    name: "Premium Full - Beige",
+    name: "Premium Full - Red Snapback",
     price: 50.00,
     category: 'full',
-    image: "/images/cap_full_fabric_beige.jpeg",
+    image: "/images/Snapback/cap_full_r-r.jpeg",
     description: "Soft structure full cap in sand beige. Casual and clean without the net."
   },
   {
@@ -180,7 +180,120 @@ export const PRODUCTS: Product[] = [
     image: "/images/cap_full_fabric_olive_seab.jpeg",
     description: "Solid olive green fabric. Rugged look, soft feel."
   },
+  {
+    id: 54,
+    name: "Premium Full - Black/Blue",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_b-b.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+   {
+    id: 55,
+    name: "Premium Full - Black/Blue",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black-blue.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+   {
+    id: 56,
+    name: "Premium Full - Black/Mauve",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black-mauve.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 57,
+    name: "Premium Full - Black/Red",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black-red.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 58,
+    name: "Premium Full - Black/White",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black-white.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 59,
+    name: "Premium Full - Black/Yellow",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black-yellow.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 60,
+    name: "Premium Full - Black",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_black.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 61,
+    name: "Premium Full - Blue/Red",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_blue-red.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 62,
+    name: "Premium Full - Blue/Yellow",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_blue-yellow.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 63,
+    name: "Premium Full - Blue",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_blue.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 64,
+    name: "Premium Full - Green/Black",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_green-black.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 65,
+    name: "Premium Full - Mauve/Yellow",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_mauve-yellow.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 66,
+    name: "Premium Full - Red/Grey",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_red-grey.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
+  {
+    id: 67,
+    name: "Premium Full - White/Black",
+    price: 50.00,
+    category: 'full',
+    image: "/images/Snapback/cap_full_white-black.jpeg",
+    description: "Soft structure full cap in sand beige. Casual and clean without the net."
+  },
 
+  
   // --- GRAPHIC TEES ---
   {
     id: 101,
