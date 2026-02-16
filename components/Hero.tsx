@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="images/hero_bg.jpg"
+          src="/images/hero_bg.jpg"
           onError={(e) => { e.currentTarget.src = "https://picsum.photos/1920/1080?grayscale&blur=2" }}
           alt="CrownWear Background" 
           className="w-full h-full object-cover opacity-100"
