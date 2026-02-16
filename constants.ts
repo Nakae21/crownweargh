@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 4,
-    name: "White & Red",
+    name: "White & Wine",
     price: 40.00,
     category: 'trucker',
     image: "/images/cap_white_red.jpg",
@@ -92,7 +92,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 11,
-    name: "White & Maroon",
+    name: "White & Red",
     price: 40.00,
     category: 'trucker',
     image: "/images/cap_white_maroon.jpg",
@@ -100,11 +100,11 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 12,
-    name: "White & Olive",
+    name: "White & Lemon Green",
     price: 40.00,
     category: 'trucker',
     image: "/images/cap_white_olive.jpg",
-    description: "Muted olive green. A tactical aesthetic."
+    description: "Muted lemon green. A tactical aesthetic."
   },
   {
     id: 13,
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 15,
-    name: "Full Beige (Mesh)",
+    name: "White & Brown",
     price: 40.00,
     category: 'trucker',
     image: "/images/cap_full_beige.jpg",
@@ -145,6 +145,14 @@ export const PRODUCTS: Product[] = [
     category: 'trucker',
     image: "/images/cap_yellow_black.jpg",
     description: "Yellow front with black mesh. Warning tape vibes."
+  },
+  {
+    id: 18,
+    name: "White & Pink",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/pink.jpeg",
+    description: "Pink front with White mesh. Warning tape vibes."
   },
 
   // --- FULL CAPS / SNAPBACK (NO NET) ---
