@@ -15,7 +15,7 @@ export const PRODUCTS: Product[] = [
     name: "Classic Black",
     price: 40.00,
     category: 'trucker',
-    image: "/images/cap_full_black.jpg",
+    image: "/images/classicb.jpeg",
     description: "The essential all-black trucker cap with mesh back. Stealth, sleek, and versatile."
   },
   {
