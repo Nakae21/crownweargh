@@ -169,7 +169,7 @@ export const PRODUCTS: Product[] = [
   name: "Premium Full - Red Snapback",
   price: 50.00,
   category: 'full',
-  image: "/images/Snapback/cap_full_r-r.jpeg",
+  image: "/images/Snapback/cap_full_ r-r.jpeg",
   description: "Premium full fabric snapback in solid red. Clean, bold, and perfectly structured."
 },
 {
