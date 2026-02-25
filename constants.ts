@@ -155,6 +155,103 @@ export const PRODUCTS: Product[] = [
     description: "Pink front with White mesh. Warning tape vibes."
   },
 
+  {
+    id: 19,
+    name: "All Blue",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/allblue.jpeg",
+    description: "Solid blue from brim to mesh. Bold and classic."
+  },
+  {
+    id: 20,
+    name: "All Red",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/allred.jpeg",
+    description: "Vibrant all-red design for a standout look."
+  },
+  {
+    id: 21,
+    name: "All White",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/allwhite.jpeg",
+    description: "Clean, crisp all-white trucker cap. Summer ready."
+  },
+  {
+    id: 22,
+    name: "Black & Ash",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/black_ash.jpeg",
+    description: "Sleek black brim with a cool ash grey front."
+  },
+  {
+    id: 23,
+    name: "Black & Brown",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/black_brown.jpeg",
+    description: "Earth tones meet urban style with this black and brown combo."
+  },
+  {
+    id: 24,
+    name: "Black & Green",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/black_green.jpeg",
+    description: "Deep green front panel with a solid black brim."
+  },
+  {
+    id: 25,
+    name: "Black & Pink",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/black_pink.jpeg",
+    description: "High contrast black and pink for a sharp, modern vibe."
+  },
+  {
+    id: 26,
+    name: "Blue & White",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/blue_white.jpeg",
+    description: "Classic royal blue brim with a white foam front."
+  },
+  {
+    id: 27,
+    name: "Brown",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/brown.jpeg",
+    description: "Full monochromatic brown design for a rugged look."
+  },
+  {
+    id: 28,
+    name: "White & Khaki",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/white_khaki.jpeg",
+    description: "Neutral khaki mesh paired with a fresh white front."
+  },
+  {
+    id: 29,
+    name: "White & Navy",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/white_navy.jpeg",
+    description: "Deep navy brim and mesh with a clean white front."
+  },
+  {
+    id: 30,
+    name: "White & Sea Blue",
+    price: 40.00,
+    category: 'trucker',
+    image: "/images/white_seablue.jpeg",
+    description: "Light sea blue accents for a refreshing, breezy aesthetic."
+  },
+  
   // --- FULL CAPS / SNAPBACK (NO NET) ---
   {
     id: 50,
