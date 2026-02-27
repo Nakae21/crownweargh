@@ -278,7 +278,7 @@ const App: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-xl mb-1 text-brand-ink">Email</h3>
                   <p className="text-brand-sub">Our friendly team is here to help.</p>
-                  <a href="mailto:Crownwear13@gmail.com" className="text-brand-ink hover:text-brand-accent transition-colors font-medium mt-1 block">
+                  <a href="mailto:crownwear13@gmail.com" className="text-brand-ink hover:text-brand-accent transition-colors font-medium mt-1 block">
                     Crownwear13@gmail.com
                   </a>
                 </div>
